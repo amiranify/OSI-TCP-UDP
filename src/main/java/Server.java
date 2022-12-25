@@ -4,12 +4,11 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.SocketException;
 
 import static ru.netology.ServerConfig.PORT;
 
 public class Server {
-    public static void main(String... args) throws SocketException {
+    public static void main(String... args) {
 
 
         try (ServerSocket serverSocket = new ServerSocket(PORT);) {
