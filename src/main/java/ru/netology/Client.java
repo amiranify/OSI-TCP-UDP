@@ -11,10 +11,7 @@ public class Client {
 
     public static void main(String... args) {
 
-        final int PORT = 8080;
-        final String HOST= "127.0.0.1";
-
-        try (Socket clientSocket = new Socket(HOST, PORT);
+        try (Socket clientSocket = new Socket(ServerConfig.HOST, ServerConfig.PORT);
              PrintWriter writer = new PrintWriter(clientSocket.getOutputStream(), true);
              BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))) {
             writer.println("amiranify");

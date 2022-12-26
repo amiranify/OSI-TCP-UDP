@@ -1,3 +1,5 @@
+package ru.netology;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -9,8 +11,6 @@ import static ru.netology.ServerConfig.PORT;
 
 public class Server {
     public static void main(String... args) {
-
-
         try (ServerSocket serverSocket = new ServerSocket(PORT);) {
             System.out.println("Сервер запущен");
             while (true) {
@@ -20,6 +20,7 @@ public class Server {
                     System.out.println("New connection accepted");
                     final String name = in.readLine();
                     writer.println(String.format("Hi %s, your port is %d%n", name, clientSocket.getPort()));
+                    System.out.println(String.format("Hi %s, your port is %d%n", name, clientSocket.getPort()));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
